@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>Player 1</title>
+  </head>
+  <body>
+    <div class="content">
+      <div class="top-bar">
+        <span class="material-symbols-rounded">expand_more</span>
+        <span>Now Playing</span>
+        <span class="material-symbols-rounded">more_horiz</span>
+      </div>
+      <div class="image-wrapper">
+        <div class="music-image"></div>
+      </div>
+      <div class="music-titles">
+        <p class="name"></p>
+        <p class="artist"></p>
+      </div>
+      <div class="progress-details">
+        <div class="progress-bar">
+          <span></span>
+        </div>
+        <div class="time">
+          <span class="current">0:00</span>
+          <span class="final">5:30</span>
+        </div>
+        <div class="control-btn">
+          <span class="material-icons-round" id="repeat">repeat</span>
+          <span class="material-icons-round" id="prev">skip-previous</span>
+          <div class="play-pause">
+            <span class="material-icons-round">play_arrow</span>
+          </div>
+          <span class="materialicons-round" id="next">skip-next</span>
+          <span class="material-icons-round" id="shuffle">shuffle</span>
+        </div>
+      </div>
+    </div>
+
+    <audio src="./music2.mp3" class="main-song"></audio>
+    <script src="./js/playlist.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

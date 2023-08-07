@@ -1,55 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ar-lehti</title>
-    <link rel="stylesheet" href="styles.css"/>
-</head>
-<body>
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+  <body>
     <!-- Replace the below with your newspaper content -->
     <article id="article1">
-        <p>This is article 1 content. Scan the QR code to reveal the hidden audioplayer.</p>
-        <!-- Add a unique identifier or URL as data attribute to the QR code -->
-        <img src="qr_code1.png" data-content-url="audio1.mp3" alt="QR Code 1">
+      <p>
+        This is article 1 content. Scan the QR code to reveal the hidden
+        audioplayer.
+      </p>
+      <!-- Add a unique identifier or URL as data attribute to the QR code -->
+      <img src="qr_code1.png" data-content-url="audio1.mp3" alt="QR Code 1" />
     </article>
 
     <article id="article2">
-        <p>This is article 2 content. Scan the QR code to reveal the hidden image or video.</p>
-        <!-- Add a unique identifier or URL as data attribute to the QR code -->
-        <img src="qr_code2.png" data-content-url="image1.jpg" alt="QR Code 2">
+      <p>
+        This is article 2 content. Scan the QR code to reveal the hidden image
+        or video.
+      </p>
+      <!-- Add a unique identifier or URL as data attribute to the QR code -->
+      <img src="qr_code2.png" data-content-url="image1.jpg" alt="QR Code 2" />
     </article>
 
     <!-- Add your JavaScript code here -->
     <script src="main.js"></script>
-</body>
+  </body>
 
-<script>
+  <script>
     document.addEventListener("DOMContentLoaded", () => {
-    // Find all the QR code images
-    const qrCodeImages = document.querySelectorAll("img[data-content-url]");
+      // Find all the QR code images
+      const qrCodeImages = document.querySelectorAll("img[data-content-url]");
 
-    // Loop through each QR code image
-    qrCodeImages.forEach(qrCodeImage => {
+      // Loop through each QR code image
+      qrCodeImages.forEach((qrCodeImage) => {
         qrCodeImage.addEventListener("click", () => {
-            // Get the content URL from the data attribute
-            const contentURL = qrCodeImage.dataset.contentUrl;
+          // Get the content URL from the data attribute
+          const contentURL = qrCodeImage.dataset.contentUrl;
 
-            // Check if the content is audio or image/video based on the file extension
-            if (contentURL.endsWith(".mp3")) {
-                // Play audio content
-                playAudio(contentURL);
-            } else if (contentURL.match(/\.(jpeg|jpg|png|gif|webp)$/i)) {
-                // Show image content
-                showImage(contentURL);
-            } else {
-                // Assume video content (you can add more thorough checks based on your use case)
-                showVideo(contentURL);
-            }
+          // Check if the content is audio or image/video based on the file extension
+          if (contentURL.endsWith(".mp3")) {
+            // Play audio content
+            playAudio(contentURL);
+          } else if (contentURL.match(/\.(jpeg|jpg|png|gif|webp)$/i)) {
+            // Show image content
+            showImage(contentURL);
+          } else {
+            // Assume video content (you can add more thorough checks based on your use case)
+            showVideo(contentURL);
+          }
         });
-    });
+      });
 
-    function playAudio(audioURL) {
+      function playAudio(audioURL) {
         // Create an audio element and set the source to the provided audioURL
         const audioElement = new Audio(audioURL);
 
@@ -60,11 +66,11 @@
 
         // Add event listener to stop the audio when user interacts with the UI
         audioplayerUI.addEventListener("click", () => {
-            audioElement.pause();
+          audioElement.pause();
         });
-    }
+      }
 
-    function showImage(imageURL) {
+      function showImage(imageURL) {
         // Create an image element and set the source to the provided imageURL
         const imageElement = document.createElement("img");
         imageElement.src = imageURL;
@@ -73,12 +79,12 @@
 
         // Add event listener to remove the image when user interacts with it
         imageElement.addEventListener("click", () => {
-            // Remove the image element from the screen
-            imageElement.remove();
+          // Remove the image element from the screen
+          imageElement.remove();
         });
-    }
+      }
 
-    function showVideo(videoURL) {
+      function showVideo(videoURL) {
         // Create a video element and set the source to the provided videoURL
         const videoElement = document.createElement("video");
         videoElement.src = videoURL;
@@ -88,11 +94,10 @@
 
         // Add event listener to remove the video when user interacts with it
         videoElement.addEventListener("click", () => {
-            // Remove the video element from the screen
-            videoElement.remove();
+          // Remove the video element from the screen
+          videoElement.remove();
         });
-    }
-});
-
-</script>
+      }
+    });
+  </script>
 </html>

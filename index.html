@@ -13,7 +13,7 @@
   <body>
     <div class="container">
       <div class="music-player">
-        <nav>
+        <nav class="nav">
           <button class="button circle">
             <span class="material-symbols-outlined"> chevron_left </span>
           </button>
@@ -62,6 +62,13 @@
       };
 
       function playPause() {}
+
+      const buttons = document.querySelectorAll(".button");
+      buttons.forEach((element) => {
+        element.addEventListener("click", (e) => {
+          console.log("button click: ", e.target);
+        });
+      });
     </script>
   </body>
 </html>

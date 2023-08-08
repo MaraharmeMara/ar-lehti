@@ -23,12 +23,12 @@
     border-radius: 5%;
     box-shadow: rgba(26, 5, 55, 0.5);
 }
-nav {
+.nav {
     display: flex;
     justify-content: space-between;
     margin: 15px;
 }
-nav .circle {
+.nav .circle {
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -87,7 +87,6 @@ nav .circle {
     border-radius: 50%;
     color: #E8F6EF;
     box-shadow: rgba(26, 5, 55, 0.5);
-    cursor: pointer;
     line-height: 75px;
 }
 .controls div:nth-child(2){
@@ -102,6 +101,7 @@ nav .circle {
 .button {
     outline: none;
     border: none;
+    cursor: pointer;
 }
 
 .controls .button {
@@ -115,7 +115,6 @@ nav .circle {
     border-radius: 50%;
     color: #E8F6EF;
     box-shadow: rgba(26, 5, 55, 0.5);
-    cursor: pointer;
     line-height: 75px;
 }
 

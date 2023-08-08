@@ -2,13 +2,99 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins';
+    font-family: 'Poppins', sans-serif;
 }
 
-body {
+.container {
+    width: 100%;
+    height: 100vh;
+    background: #4C4C6D;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    flex-wrap: wrap;
 }
 
+.music-player {
+    background: #1B9C85;
+    width: 400px;
+    padding: 25px 35px;
+    text-align: center;
+    border-radius: 5%;
+    box-shadow: rgba(26, 5, 55, 0.5);
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+}
+nav .circle {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 53px;
+    background: #4C4C6D;
+    color: #E8F6EF;
+    box-shadow: 0 5px 10px rgba(10, 62, 47, 0.34);
+}
+.song-img {
+    width: 270px;
+    border-radius: 50%;
+    border: 4px solid #4C4C6D;
+    box-shadow: 0 10px 60px rgba(10, 62, 47, 0.34);
+}
+.music-player h1 {
+    font-size: 20px;
+    font-weight: 400;
+    color: #E8F6EF;
+    margin-top: 20px;
+}
+.music-player p {
+    font-size: 14px;
+    color: #E8F6EF;
+}
+#progress {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    background: #4C4C6D;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 40px 0;
+}
+#progress::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #4C4C6D;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 6px solid #E8F6EF;
+    box-shadow: rgba(26, 5, 55, 0.5);
+}
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.controls div {
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+    background: #4C4C6D;
+    display: inline;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #E8F6EF;
+    box-shadow: rgba(26, 5, 55, 0.5);
+    cursor: pointer;
+    line-height: 75px;
+}
+.controls div:nth-child(2){
+    transform: scale(1.5);
+    background: #E8F6EF;
+    color: #4C4C6D;
+}
+.material-symbols-outlined {
+    transform: scale(1.5);
+}

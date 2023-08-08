@@ -90,11 +90,47 @@ nav .circle {
     cursor: pointer;
     line-height: 75px;
 }
-.controls div:nth-child(2){
+
+.play {
     transform: scale(1.5);
-    background: #E8F6EF;
-    color: #4C4C6D;
+
 }
-.material-symbols-outlined {
+.play .material-symbols-outlined {
     transform: scale(1.5);
+    color: #FFE194;
+
 }
+
+.volume {
+    margin: 20px;
+    display: inline;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 50%;
+    color: #E8F6EF;
+    box-shadow: rgba(26, 5, 55, 0.5);
+    cursor: pointer;
+}
+.track {
+    display: none;
+}
+
+#volume {
+    -webkit-appearance: none;
+    width: 50%;
+    height: 6px;
+    background: #FFE194;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 40px 0;
+  }
+  #volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background: #FFE194;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 6px solid #E8F6EF;
+    box-shadow: rgba(26, 5, 55, 0.5);
+}
+

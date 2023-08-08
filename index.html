@@ -37,7 +37,7 @@
               keyboard_double_arrow_left
             </span>
           </button>
-          <button class="button play-button" onclick="playPause()">
+          <button class="button play-button">
             <span class="material-symbols-outlined" id="ctrlIcon">
               play_circle
             </span>
@@ -61,7 +61,31 @@
         progress.value = song.currentTime;
       };
 
-      function playPause() {}
+      const playButton = document.querySelector(".controls .play-button");
+      playButton.addEventListener("click", (e) => {
+        playPause(e);
+      });
+
+      let playing = false;
+      async function playPause(event) {
+        event.stopPropagation();
+
+        if (playing) {
+          song.pause();
+          playing = false;
+          ctrlIcon.innerHTML = "play_circle";
+          return;
+        }
+
+        try {
+          await song.play();
+          playing = true;
+          ctrlIcon.innerHTML = "pause_circle";
+        } catch (error) {
+          console.error("какая то ошибка", error);
+          playing = false;
+        }
+      }
 
       const buttons = document.querySelectorAll(".button");
       buttons.forEach((element) => {

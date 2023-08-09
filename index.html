@@ -15,7 +15,7 @@
       <div class="music-player">
         <nav>
           <div class="circle">
-            <span class="material-symbols-outlined"> chevron_left </span>
+            <span class="material-symbols-outlined" onclick="previousTrack()"> chevron_left </span>
           </div>
           <div class="circle">
             <span class="material-symbols-outlined"> density_medium </span>
@@ -53,7 +53,7 @@
           </div>
 
           <div class="a-right">
-            <span class="material-symbols-outlined">
+            <span class="material-symbols-outlined" onclick="nextTrack()">
               keyboard_double_arrow_right
             </span>
           </div>
@@ -66,6 +66,31 @@
       let song = document.getElementById("song");
       let ctrlIcon = document.getElementById("ctrlIcon");
       let volumeSlider = document.getElementById("volume");
+      let currentTrackIndex = 0; 
+
+      const tracks = [
+  { title: "Song 1", artist: "Artist 1", src: "./music1.mp3" },
+  { title: "Song 2", artist: "Artist 2", src: "./music2.mp3" },
+  // Add more track objects as needed
+];
+
+function loadTrack(index) {
+  song.src = tracks[index].src;
+  song.play();
+  document.querySelector("h1").textContent = tracks[index].title;
+  document.querySelector("p").textContent = tracks[index].artist;
+  ctrlIcon.textContent = "pause_circle";
+}
+
+function nextTrack() {
+  currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+  loadTrack(currentTrackIndex);
+}
+
+function previousTrack() {
+  currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
+  loadTrack(currentTrackIndex);
+}
 
       // Add the 'input' event listener to the volume slider
       volumeSlider.addEventListener("input", function () {
